@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Link extends Component {
   render() {
     return (
-      <li>
+      <div>
         <a
           href={this.props.link.url}
           target="_blank"
@@ -11,7 +11,7 @@ class Link extends Component {
         >
           {this.props.link.title}
         </a>
-      </li>
+      </div>
     )
   }
 }

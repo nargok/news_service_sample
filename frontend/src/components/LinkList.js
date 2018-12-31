@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+
 import Link from './Link';
+import { FEED_QUERY } from '../graphql';
 
 class LinkList extends Component {
   render() {
@@ -18,9 +21,11 @@ class LinkList extends Component {
       }
     ]
     return (
-      <ul>
-        {linksToRender.map(link => <Link key={link.id} link={link} />)}
-      </ul>
+      <Query query={FEED_QUERY}>
+        {() => linksToRender.map(link =>
+          <Link key={link.id} link={link} />
+        )}
+      </Query>
     )
   }
 };
