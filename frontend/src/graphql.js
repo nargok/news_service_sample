@@ -10,6 +10,7 @@ export const FEED_QUERY = gql`
         url
         description
         siteName
+        createdAt
       }
     }
   }
