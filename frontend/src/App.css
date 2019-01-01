@@ -85,6 +85,15 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+.site_name {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.site_name p {
+  color: #8c8c8c;
+}
+
 /* フッター */
 footer {
   grid-row: foot;

@@ -5,6 +5,12 @@ import Link from './Link';
 import { FEED_QUERY } from '../graphql';
 
 class LinkList extends Component {
+
+  _getLinksToRender = (links) => {
+    const sorted_links = links.sort((link1, link2) => link1.node.createdAt < link2.node.createdAt ? 1 : -1);
+    return sorted_links;
+  };
+
   render() {
     return (
       <Query query={FEED_QUERY}>
@@ -15,7 +21,7 @@ class LinkList extends Component {
             return <div className="main">Error</div>
           }
 
-          const linksToRender = data.allLinks.edges;
+          const linksToRender = this._getLinksToRender(data.allLinks.edges);
 
           return (
             <div className="main">
