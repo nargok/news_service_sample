@@ -6,11 +6,13 @@ export const FEED_QUERY = gql`
     edges {
       node {
         id
+        title
         url
         description
-        title
+        siteName
       }
     }
   }
 }
+
 `;

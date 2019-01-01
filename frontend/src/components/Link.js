@@ -13,6 +13,9 @@ class Link extends Component {
             {this.props.link.title}
           </a>
         </h3>
+        <div className="site_name">
+          <p>{this.props.link.siteName}</p>
+        </div>
         <div>
           <p>
             {this.props.link.description}
