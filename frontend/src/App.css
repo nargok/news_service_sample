@@ -1,32 +1,80 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+#root {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows:
+            [head] 100px
+            [main] auto
+            [foot] 100px;
+  grid-row-gap: 20px;
+  row-gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#root > * {
+  grid-column: 2 / -2;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  grid-row: head;
+  justify-self: center;
+  align-self: center;
+  font-size: 40px;
+  color: #555d6b;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  grid-row: head;
+  justify-self: center;
+  align-self: end;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 20px;
+  grid-gap: 20px;
+}
+
+nav a {
+  color: #666;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ef9504;
+}
+
+/* メインコンテンツ */
+.main {
+  grid-row: main;
+  display: grid;
+  text-align: left;
+}
+
+/* フッター */
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+}
+
+#root::after {
+  content: "";
+  background-color: #eee;
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
 }
