@@ -59,8 +59,30 @@ nav a:hover {
 /* メインコンテンツ */
 .main {
   grid-row: main;
-  display: grid;
-  text-align: left;
+}
+
+.main > article {
+  border-top: 1px solid #e0e0e0;
+  padding: 10px 5px;
+  width: 100%;
+}
+
+.main article a {
+  text-decoration: none;
+  color: #1c5d99;
+  display: inline-block;
+}
+
+.main article a:hover {
+  text-decoration: underline;
+}
+
+.main article a:visited {
+  color: #6e97be;
+}
+
+.feed_title {
+  margin-bottom: 10px;
 }
 
 /* フッター */
