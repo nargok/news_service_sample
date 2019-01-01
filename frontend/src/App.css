@@ -2,19 +2,18 @@
   margin: 0;
 }
 
-body {
+#root {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
             [head] 100px
-            [title] auto
             [main] auto
             [foot] 100px;
   grid-row-gap: 20px;
   row-gap: 20px;
 }
 
-body > * {
+#root > * {
   grid-column: 2 / -2;
 }
 
@@ -55,4 +54,27 @@ nav a {
 
 nav a:hover {
   color: #ef9504;
+}
+
+/* メインコンテンツ */
+.main {
+  grid-row: main;
+  display: grid;
+  text-align: left;
+}
+
+/* フッター */
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+}
+
+#root::after {
+  content: "";
+  background-color: #eee;
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
 }

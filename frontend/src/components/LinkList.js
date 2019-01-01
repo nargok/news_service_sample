@@ -9,18 +9,18 @@ class LinkList extends Component {
     return (
       <Query query={FEED_QUERY}>
         {({ loading, error, data }) => {
-          if (loading) return <div>Loading...</div>
+          if (loading) return <div className="main">Loading...</div>
           if (error) {
             console.log({error})
-            return <div>Error</div>
+            return <div className="main">Error</div>
           }
 
           const linksToRender = data.allLinks.edges;
 
           return (
-            <React.Fragment>
+            <div className="main">
               {linksToRender.map(link => <Link key={link.node.id} link={link.node} />)}
-            </React.Fragment>
+            </div>
           )
         }}
       </Query>
