@@ -4,6 +4,7 @@ class Link extends Component {
   render() {
     return (
       <div>
+        <h2>
         <a
           href={this.props.link.url}
           target="_blank"
@@ -11,6 +12,10 @@ class Link extends Component {
         >
           {this.props.link.title}
         </a>
+        </h2>
+        <p>
+          {this.props.link.description}
+        </p>
       </div>
     )
   }
