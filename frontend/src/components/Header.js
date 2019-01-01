@@ -2,18 +2,18 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header>
-      <h1>
+    <React.Fragment>
+      <header>
         Logo
-      </h1>
+      </header>
       <nav>
         <ul>
-          <li><a href="/">Top</a></li>
+          <li><a href="/">トップ</a></li>
           <li><a href="/about">このサイトについて</a></li>
           <li><a href="/login">ログイン</a></li>
         </ul>
       </nav>
-    </header>
+    </React.Fragment>
   )
 };
 
